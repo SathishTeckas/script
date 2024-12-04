@@ -28,18 +28,17 @@ window.onload = () => {
         background-color: #2563eb;
       }
       .chatbot-container {
-        .chatbot-container {
         position: fixed;
         bottom: 20px;
         right: 16px;
         width: 400px;
         height: 600px;
-        border: none;
-        border-radius: 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         display: none;
-      }
+        background-color: white;
       }
       .chatbot-close-btn {
         position: absolute;
