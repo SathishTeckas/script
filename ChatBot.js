@@ -8,7 +8,7 @@ window.onload = () => {
     // Retrieve the data-agent-id attribute from the script tag
     const agentId = chatbotElement ? chatbotElement.getAttribute('data-agent-id') : null;
     const accountId = chatbotElement ? chatbotElement.getAttribute('data-account-id') : null;
-   // alert(`Agent ID: ${agentId}`);
+   alert(`Agent ID: ${accountId}`);
 
     const style = document.createElement('style');
     style.textContent = `
