@@ -81,7 +81,7 @@ window.onload = () => {
   
     // Add iframe to chatbot container
     const iframe = document.createElement('iframe');
-    iframe.src = 'https://08f0-2409-408d-1eca-4047-8852-e4ca-1c54-e29f.ngrok-free.app/'; // Replace with your chatbot's URL
+    iframe.src = `https://08f0-2409-408d-1eca-4047-8852-e4ca-1c54-e29f.ngrok-free.app?agentId=${agentId}`; // Replace with your chatbot's URL
     iframe.title = 'Chatbot';
     iframe.style.width = '100%';
     iframe.style.height = '100%';
