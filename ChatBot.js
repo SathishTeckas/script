@@ -6,7 +6,6 @@
     const chatbotElement = document.getElementById('chatbot');
     const agentId = chatbotElement ? chatbotElement.getAttribute('data-agent-id') : null;
     const accountId = chatbotElement ? chatbotElement.getAttribute('data-account-id') : null;
-    // alert(`Agent ID: ${accountId}`);
 
     const style = document.createElement('style');
     style.textContent = `
@@ -29,7 +28,8 @@
         position: fixed;
         bottom: 20px;
         right: 16px;
-        width: 400px;
+        max-width: 375px;
+        width: 100%;
         height: 600px;
         border: 1px solid #ccc;
         border-radius: 8px;
@@ -38,6 +38,11 @@
         display: none;
         background-color: white;
       }
+      .chatbot-container.tr-lg { border-top-right-radius: 16px; }
+      .chatbot-container.tl-lg { border-top-left-radius: 16px; }
+      .chatbot-container.br-lg { border-bottom-right-radius: 16px; }
+      .chatbot-container.bl-lg { border-bottom-left-radius: 16px; }
+
       .chatbot-close-btn {
         position: absolute;
         top: 8px;
@@ -57,39 +62,11 @@
         display: block;
       }
 
-      /* Responsive design */
-      @media (max-width: 768px) {
-        .chatbot-container {
-          width: 90%;
-          height: 70%;
-          bottom: 10px;
-          right: 5%;
-        }
-        .chatbot-toggle-btn {
-          bottom: 60px;
-          right: 10px;
-          padding: 12px;
-        }
-      }
-      @media (max-width: 480px) {
-        .chatbot-container {
-          width: 100%;
-          height: 60%;
-          bottom: 0;
-          right: 0;
-          border-radius: 0;
-        }
-        .chatbot-toggle-btn {
-          bottom: 50px;
-          right: 10px;
-          padding: 10px;
-        }
-      }
-      @media (min-width: 1024px) {
-        .chatbot-container {
-          width: 400px;
-          height: 600px;
-        }
+      iframe {
+        max-width: 375px;
+        width: 100%;
+        height: 100%;
+        border: none;
       }
     `;
     document.head.appendChild(style);
@@ -103,7 +80,7 @@
 
     // Create the chatbot container
     const chatbotContainer = document.createElement('div');
-    chatbotContainer.className = 'chatbot-container';
+    chatbotContainer.className = 'chatbot-container tr-lg tl-lg br-lg bl-lg';
     chatbotContainer.id = 'chatbot-container';
 
     // Add close button to chatbot container
@@ -117,9 +94,6 @@
     const iframe = document.createElement('iframe');
     iframe.src = `https://invoicing-ai-agent.vercel.app?agentId=${agentId}&accountId=${accountId}`;
     iframe.title = 'Chatbot';
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
-    iframe.style.border = 'none';
     chatbotContainer.appendChild(iframe);
 
     document.body.appendChild(chatbotContainer);
