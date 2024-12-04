@@ -7,6 +7,7 @@ window.onload = () => {
     const chatbotElement = document.getElementById('chatbot');
     // Retrieve the data-agent-id attribute from the script tag
     const agentId = chatbotElement ? chatbotElement.getAttribute('data-agent-id') : null;
+    const accountId = chatbotElement ? chatbotElement.getAttribute('data-account-id') : null;
    // alert(`Agent ID: ${agentId}`);
 
     const style = document.createElement('style');
@@ -81,7 +82,7 @@ window.onload = () => {
   
     // Add iframe to chatbot container
     const iframe = document.createElement('iframe');
-    iframe.src = `https://invoicing-ai-agent.vercel.app?agentId=${agentId}`; // Replace with your chatbot's URL
+    iframe.src = `https://invoicing-ai-agent.vercel.app?agentId=${agentId}&accountId=${accountId}`; // Replace with your chatbot's URL
     iframe.title = 'Chatbot';
     iframe.style.width = '100%';
     iframe.style.height = '100%';
