@@ -1,14 +1,12 @@
 (function () {
-    // Add styles dynamically
-    if (typeof window === 'undefined') return;
-    console.log("Chatbot script loaded successfully");
-// Additional JavaScript code for your chatbot
-window.onload = () => {
+  if (typeof window === 'undefined') return;
+  console.log("Chatbot script loaded successfully");
+
+  window.onload = () => {
     const chatbotElement = document.getElementById('chatbot');
-    // Retrieve the data-agent-id attribute from the script tag
     const agentId = chatbotElement ? chatbotElement.getAttribute('data-agent-id') : null;
     const accountId = chatbotElement ? chatbotElement.getAttribute('data-account-id') : null;
-   alert(`Agent ID: ${accountId}`);
+    alert(`Agent ID: ${accountId}`);
 
     const style = document.createElement('style');
     style.textContent = `
@@ -58,47 +56,81 @@ window.onload = () => {
       .visible {
         display: block;
       }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .chatbot-container {
+          width: 90%;
+          height: 70%;
+          bottom: 10px;
+          right: 5%;
+        }
+        .chatbot-toggle-btn {
+          bottom: 60px;
+          right: 10px;
+          padding: 12px;
+        }
+      }
+      @media (max-width: 480px) {
+        .chatbot-container {
+          width: 100%;
+          height: 60%;
+          bottom: 0;
+          right: 0;
+          border-radius: 0;
+        }
+        .chatbot-toggle-btn {
+          bottom: 50px;
+          right: 10px;
+          padding: 10px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .chatbot-container {
+          width: 400px;
+          height: 600px;
+        }
+      }
     `;
     document.head.appendChild(style);
-  
+
     // Create the chatbot toggle button
     const toggleButton = document.createElement('button');
     toggleButton.className = 'chatbot-toggle-btn';
     toggleButton.textContent = 'Chat';
     toggleButton.ariaLabel = 'Toggle Chatbot';
     document.body.appendChild(toggleButton);
-  
+
     // Create the chatbot container
     const chatbotContainer = document.createElement('div');
     chatbotContainer.className = 'chatbot-container';
     chatbotContainer.id = 'chatbot-container';
-  
+
     // Add close button to chatbot container
     const closeButton = document.createElement('button');
     closeButton.className = 'chatbot-close-btn';
     closeButton.textContent = 'X';
     closeButton.ariaLabel = 'Close Chatbot';
     chatbotContainer.appendChild(closeButton);
-  
+
     // Add iframe to chatbot container
     const iframe = document.createElement('iframe');
-    iframe.src = `https://invoicing-ai-agent.vercel.app?agentId=${agentId}&accountId=${accountId}`; // Replace with your chatbot's URL
+    iframe.src = `https://invoicing-ai-agent.vercel.app?agentId=${agentId}&accountId=${accountId}`;
     iframe.title = 'Chatbot';
     iframe.style.width = '100%';
     iframe.style.height = '100%';
     iframe.style.border = 'none';
     chatbotContainer.appendChild(iframe);
-  
+
     document.body.appendChild(chatbotContainer);
-  
+
     // Add event listeners
     toggleButton.addEventListener('click', () => {
       chatbotContainer.classList.toggle('visible');
     });
-  
+
     closeButton.addEventListener('click', () => {
       chatbotContainer.classList.remove('visible');
-    }); 
-};
-  })();
-  
+    });
+  };
+})();
