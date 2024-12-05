@@ -6,6 +6,7 @@
     const chatbotElement = document.getElementById('chatbot');
     const agentId = chatbotElement ? chatbotElement.getAttribute('data-agent-id') : null;
     const accountId = chatbotElement ? chatbotElement.getAttribute('data-account-id') : null;
+      const walletClient = chatbotElement ? chatbotElement.getAttribute('data-wallet-client') : null;
     alert(accountId);
     const style = document.createElement('style');
     style.textContent = `
@@ -120,7 +121,7 @@
 
     // Add iframe to chatbot container
     const iframe = document.createElement('iframe');
-    iframe.src = `https://invoicing-ai-agent.vercel.app/?agentId=${agentId}&accountId=${accountId}`;
+    iframe.src = `https://invoicing-ai-agent.vercel.app/?agentId=${agentId}&accountId=${accountId}&walletClient=${walletClient}`;
     iframe.title = 'Chatbot';
     chatbotContainer.appendChild(iframe);
 
