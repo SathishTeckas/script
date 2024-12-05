@@ -47,7 +47,7 @@
         position: absolute;
         top: 8px;
         right: 8px;
-        background: linear-gradient(135deg, #2563eb, #22c55e);
+        background: linear-gradient(135deg, #ef4444, #dc2626);
         color: white;
         padding: 8px;
         width: 32px;
@@ -71,7 +71,7 @@
         color: white;
       }
       .chatbot-close-btn:hover {
-        background: linear-gradient(135deg, #22c55e, #2563eb);
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
         transform: scale(1.1);
         box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
       }
