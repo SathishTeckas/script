@@ -7,7 +7,7 @@
     const agentId = chatbotElement ? chatbotElement.getAttribute('data-agent-id') : null;
     const accountId = chatbotElement ? chatbotElement.getAttribute('data-account-id') : null;
       const walletClient = chatbotElement ? chatbotElement.getAttribute('data-wallet-client') : null;
-    alert(accountId);
+    alert(walletClient);
     const style = document.createElement('style');
     style.textContent = `
       .chatbot-toggle-btn {
