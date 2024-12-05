@@ -44,8 +44,6 @@
       .chatbot-container.bl-lg { border-bottom-left-radius: 16px; }
 
       .chatbot-close-btn {
-   
-      .chatbot-close-btn {
         position: absolute;
         top: 8px;
         right: 8px;
@@ -74,7 +72,6 @@
         transform: scale(1.1);
         box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
       }
-      
       .visible {
         display: block;
       }
@@ -85,14 +82,16 @@
         height: 100%;
         border: none;
       }
+
+      /* Responsive styles for mobile devices */
       @media (max-width: 480px) {
         .chatbot-container {
-          right: 0; /* Remove right spacing */
-          left: 0;  /* Make it fit the screen */
-          width: 100%; /* Full width on mobile */
+          right: 0;
+          left: 0;
+          width: 100%;
         }
         .chatbot-toggle-btn {
-          right: 16px; /* Ensure toggle button stays visible */
+          right: 16px;
         }
       }
     `;
@@ -113,7 +112,6 @@
     // Add close button to chatbot container
     const closeButton = document.createElement('button');
     closeButton.className = 'chatbot-close-btn';
-    closeButton.textContent = 'X';
     closeButton.ariaLabel = 'Close Chatbot';
     chatbotContainer.appendChild(closeButton);
 
