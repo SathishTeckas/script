@@ -122,7 +122,7 @@
 
     // Add iframe to chatbot container
     const iframe = document.createElement('iframe');
-    iframe.src = `https://7723-2409-408d-1eca-4047-a8e1-c146-606c-8803.ngrok-free.app?agentId=${agentId}&accountId=${accountId}`;
+    iframe.src = `https://affc-2409-408d-1eca-4047-a8e1-c146-606c-8803.ngrok-free.app?agentId=${agentId}&accountId=${accountId}`;
     iframe.title = 'Chatbot';
     chatbotContainer.appendChild(iframe);
 
