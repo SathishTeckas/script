@@ -6,8 +6,6 @@
     const chatbotElement = document.getElementById('chatbot');
     const agentId = chatbotElement ? chatbotElement.getAttribute('data-agent-id') : null;
     const accountId = chatbotElement ? chatbotElement.getAttribute('data-account-id') : null;
-    alert(agentId);
-    alert(accountId);
 
     const style = document.createElement('style');
     style.textContent = `
