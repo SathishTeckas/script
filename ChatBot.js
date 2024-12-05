@@ -44,20 +44,37 @@
       .chatbot-container.bl-lg { border-bottom-left-radius: 16px; }
 
       .chatbot-close-btn {
+   
+      .chatbot-close-btn {
         position: absolute;
         top: 8px;
         right: 8px;
         background-color: #ef4444;
         color: white;
-        padding: 8px;
+        padding: 8px 12px;
+        border: none;
         border-radius: 50%;
         cursor: pointer;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+      .chatbot-close-btn::after {
+        content: "✖";
+        font-size: 18px;
+        line-height: 1;
       }
       .chatbot-close-btn:hover {
         background-color: #dc2626;
+        transform: scale(1.1);
+        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
       }
+      
       .visible {
         display: block;
       }
@@ -67,6 +84,16 @@
         width: 100%;
         height: 100%;
         border: none;
+      }
+      @media (max-width: 480px) {
+        .chatbot-container {
+          right: 0; /* Remove right spacing */
+          left: 0;  /* Make it fit the screen */
+          width: 100%; /* Full width on mobile */
+        }
+        .chatbot-toggle-btn {
+          right: 16px; /* Ensure toggle button stays visible */
+        }
       }
     `;
     document.head.appendChild(style);
