@@ -47,14 +47,16 @@
         position: absolute;
         top: 8px;
         right: 8px;
-        background-color: #ef4444;
+        background: linear-gradient(135deg, #2563eb, #22c55e);
         color: white;
-        padding: 8px 12px;
+        padding: 8px;
+        width: 32px;
+        height: 32px;
         border: none;
-        border-radius: 50%;
+        border-radius: 4px;
         cursor: pointer;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        font-size: 14px;
+        font-size: 16px;
         font-weight: bold;
         line-height: 1;
         display: flex;
@@ -64,11 +66,12 @@
       }
       .chatbot-close-btn::after {
         content: "✖";
-        font-size: 18px;
-        line-height: 1;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
       }
       .chatbot-close-btn:hover {
-        background-color: #dc2626;
+        background: linear-gradient(135deg, #22c55e, #2563eb);
         transform: scale(1.1);
         box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
       }
