@@ -121,7 +121,7 @@
 
     // Add iframe to chatbot container
     const iframe = document.createElement('iframe');
-    iframe.src = `https://e684-2409-408d-1eca-4047-7586-34d1-dac7-8c37.ngrok-free.app/?agentId=${agentId}&accountId=${accountId}&walletClient=${walletClient}`;
+    iframe.src = `https://invoicing-ai-agent.vercel.app/?agentId=${agentId}&accountId=${accountId}&walletClient=${walletClient}`;
     iframe.title = 'Chatbot';
     chatbotContainer.appendChild(iframe);
 
