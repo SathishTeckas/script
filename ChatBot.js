@@ -4,7 +4,8 @@
 
   window.onload = () => {
     const chatbotElement = document.getElementById('chatbot');
-    const agentId = chatbotElement ? chatbotElement.getAttribute('data-agent-id') : null;
+    const contractAddress = chatbotElement ? chatbotElement.getAttribute('data-contract-address') : null;
+   const abi = chatbotElement ? chatbotElement.getAttribute('data-abi') : null;
     const style = document.createElement('style');
     style.textContent = `
       .chatbot-toggle-btn {
