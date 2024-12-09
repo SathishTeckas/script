@@ -3,7 +3,7 @@
   console.log("Chatbot script loaded successfully");
 
   window.onload = () => {
-    const chatbotElement = document.getElementById('chatbot');
+    const chatbotElement = document.getElementById('chatbot'); 
     const agentId = chatbotElement ? chatbotElement.getAttribute('data-agent-id') : null;
     const contractAddress = chatbotElement ? chatbotElement.getAttribute('data-contract-address') : null;
    const abi = chatbotElement ? chatbotElement.getAttribute('data-abi') : null;
