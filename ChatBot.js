@@ -118,7 +118,7 @@
 
     // Add iframe to chatbot container
     const iframe = document.createElement('iframe');
-    iframe.src = `https://script-sepia.vercel.app/?agentId=${agentId}`;
+    iframe.src = `invoicing-ai-agent.vercel.app?agentId=${agentId}`;
     iframe.title = 'Chatbot';
     chatbotContainer.appendChild(iframe);
 
